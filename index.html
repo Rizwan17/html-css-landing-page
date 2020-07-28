@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Convert Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/00c3468ae7.js"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Recursive';
+        }
+        .hero{
+            background: url('./concert.jpg');
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            background: #ffffff;
+            width: 600px;
+            display: flex;
+        }
+        .reg-form{
+            width: 400px;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        .girl-img{
+            width: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .girl-img img{
+            position: absolute;
+            width: 300px;
+        }
+        .form-header{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        .form-header span:nth-child(1){
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .form-header span:nth-child(2){
+            font-size: 14px;
+        }
+        .input-container{
+            position: relative;
+            margin: 20px 0;
+        }
+        .input-container label{
+            position: absolute;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #cecece;
+            width: 100%;
+            display: block;
+            z-index: 0;
+            bottom: 5px;
+            transition: all 0.1s ease-in-out;
+        }
+        .input-container.active label{
+            bottom: 25px;
+        }
+        .input-container .input{
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #cecece;
+            cursor: text;
+            width: 100%;
+            position: relative;
+            background: transparent;
+            box-sizing: border-box;
+            padding: 5px 0;
+            font-family: 'Recursive';
+            font-weight: 500;
+        }
+        .signup-btn{
+            text-transform: uppercase;
+            color: #ffffff;
+            font-family: 'Recursive';
+            font-weight: 500;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            background: #f44336;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 30px;
+            font-size: 12px;
+        }
+        .form-footer a{
+            text-decoration: none;
+            color: #666666;
+            font-size: 12px;
+            display: inline-block;
+            margin: 0 10px;
+            border-bottom: 2px solid #f44336;
+        }
+        .social-media{
+            margin-top: 20px;
+        }
+        .social-media span{
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .social-media a{
+            text-decoration: none;
+            color: #333333;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        @media screen and (max-width: 600px){
+            .card{
+                width: 100%;
+                margin: 0 20px;
+            }
+            .card .girl-img{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="card">
+            <div class="reg-form">
+                <div class="form-header">
+                    <span>Sign up</span>
+                    <span>Welcome to<br />Music concert</span>
+                </div>
+                <div class="form-body">
+                    <div class="input-container">
+                        <label for="">Name</label>
+                        <input class="input" type="text">
+                    </div>
+                    <div class="input-container">
+                        <label for="">Email</label>
+                        <input class="input" type="text">
+                    </div>
+                    <div class="input-container">
+                        <label for="">Password</label>
+                        <input class="input" type="password">
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <button class="signup-btn">Sign up now</button>
+                    <a href="#">I am already a member</a>
+                </div>
+
+                <div class="social-media">
+                    <span>Connect with us</span>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+            </div>
+            <div class="girl-img">
+                <img src="./music-girl.png" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        document.querySelectorAll('.input-container')
+        .forEach((element, index) => {
+            element.addEventListener('focusin', () => {
+                element.classList.add('active');
+            });
+            element.addEventListener('focusout', () => {
+                if(element.querySelector('.input').value === ""){
+                    element.classList.remove('active');
+                }
+            })
+        });
+    </script>
+    
+</body>
+</html>
